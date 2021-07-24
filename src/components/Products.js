@@ -1,3 +1,4 @@
+import { counterActions } from '../store/index'
 import { useSelector, useDispatch} from 'react-redux';
 
 function Product() {
@@ -11,17 +12,12 @@ function Product() {
     const dispatch = useDispatch();
 
     function increment(value) {
-        dispatch({
-            type: 'increment',
-            value: value,
-        });
+        dispatch(counterActions.increment({value: value})); // automatically creates a action obj with a random unique type identifier
+                                                            // value passed is added to key "payload"
     }
 
     function decrement(value) {
-        dispatch({
-            type: 'decrement',
-            value: value,
-        });
+        dispatch(counterActions.decrement({value: value}));
     }
 
     return (
