@@ -3,7 +3,7 @@ import { useSelector, useDispatch} from 'react-redux';
 
 function Product() {
     function getCounter(state) {
-        return state.counter;
+        return state.counterSlice.counter;
     };
 
     const counter = useSelector(getCounter); // componte automatically subscribes to store
