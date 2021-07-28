@@ -1,5 +1,5 @@
-import { counterActions } from '../store/index'
 import { useSelector, useDispatch} from 'react-redux';
+import { counterActions } from '../store/counter';
 
 function Product() {
     function getCounter(state) {

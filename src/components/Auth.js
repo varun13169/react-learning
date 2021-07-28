@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { authAction } from "../store";
+import { authAction } from "../store/auth";
 
 function Auth() {
 

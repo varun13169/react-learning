@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { authAction } from "../store";
+import { authAction } from "../store/auth";
 
 function Header() {
     function isLoggedIn(state) {
