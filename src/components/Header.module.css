@@ -1,0 +1,15 @@
+.button {
+    background-color: yellow;
+}
+
+.header-list {
+    padding: 1rem;
+    display: inline;
+}
+
+
+@media (max-width: 768px) {
+    .button {
+        color: red;
+    }
+}

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store/auth";
+import styles from './Header.module.css';
 
 function Header() {
     function isLoggedIn(state) {
@@ -21,15 +22,20 @@ function Header() {
         <header>
             <div>Redux Auth</div>
             { loggedIn &&
-                <ul style={{display: 'inline'}}>
-                    <li style={{display: 'inline', padding: '1rem'}}>
+                <ul>
+                    <li className={styles['header-list']}>
+                        {/*
+                            for dynamic classes we can use backtick and add logic to generate strings conditionally
+                            eg:
+                                className={ `${styles['header-list']} ${isValid && styles['another-css-class']}` }
+                         */}
                         <a href='.' style={{textDecoration: 'none'}}>My Products</a>
                     </li>
-                    <li style={{display: 'inline', padding: '1rem'}}>
+                    <li className={styles['header-list']}>
                         <a href='.' style={{textDecoration: 'none'}}>My Sales</a>
                     </li>
-                    <li style={{display: 'inline', padding: '1rem'}}>
-                    <button onClick={logUserOut}>Logout</button> 
+                    <li className={styles['header-list']}>
+                    <button className={styles.button} onClick={logUserOut}>Logout</button> 
                     </li>
                 </ul>
             }
