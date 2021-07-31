@@ -7,6 +7,8 @@ import Header from './components/Header'
 import Auth from './components/Auth';
 import { useSelector } from 'react-redux';
 import UserProfile from './components/UserProfile';
+import ExpenseForm from './components/ExpenseForm';
+import ShowExpense from './components/ShowExpense';
 
 function App() {
   const isLoggedIn = useSelector((state) => {return state.authSlice.isAuthenticated})
@@ -16,7 +18,7 @@ function App() {
       <Header></Header>
       {!isLoggedIn && <Auth/>}
       {isLoggedIn && <UserProfile/>}
-      <headers style={{height: "2rem", backgroundColor: "blue", width:"100%"}}>
+      <header style={{height: "2rem", backgroundColor: "lightblue", width:"100%"}}>
         <nav>
           <ul>
             <li>
@@ -27,7 +29,7 @@ function App() {
             </li>
           </ul>
         </nav>
-      </headers>
+      </header>
 
       <main>
         <Route path="/welcome">
@@ -37,6 +39,9 @@ function App() {
           <Products/>
         </Route>
       </main>
+
+      <ExpenseForm></ExpenseForm>
+      <ShowExpense></ShowExpense>
       
 
     </div>
